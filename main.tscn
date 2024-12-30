@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cf6m2qaenccw4"]
+
+[ext_resource type="Script" path="res://PhysicsProcess.cs" id="1_chldd"]
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_chldd")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.707107, 0.640856, -0.298836, 0, 0.422618, 0.906308, 0.707107, -0.640856, 0.298836, -500, 500, 1000)
+shadow_enabled = true

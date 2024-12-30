@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=3 uid="uid://d2sdsrvks8cq6"]
+
+[ext_resource type="Script" path="res://Rocket.cs" id="1_npn0y"]
+[ext_resource type="PackedScene" uid="uid://bgcarv666xwqm" path="res://gui.tscn" id="2_4o1pa"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_pgl4m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_01pm6"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_c1l47"]
+material = SubResource("StandardMaterial3D_01pm6")
+
+[sub_resource type="Sky" id="Sky_qbqv0"]
+
+[sub_resource type="Environment" id="Environment_p2b8l"]
+background_mode = 2
+sky = SubResource("Sky_qbqv0")
+
+[node name="Rocket" type="StaticBody3D"]
+script = ExtResource("1_npn0y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+rotation_edit_mode = 2
+shape = SubResource("CylinderShape3D_pgl4m")
+disabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_c1l47")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 10, 10)
+environment = SubResource("Environment_p2b8l")
+fov = 90.0
+
+[node name="GUI" parent="Camera3D" instance=ExtResource("2_4o1pa")]

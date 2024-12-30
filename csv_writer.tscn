@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpv3prac25hav"]
+
+[ext_resource type="Script" path="res://CSVWriter.cs" id="1_dkvvw"]
+
+[node name="CSVWriter" type="Node"]
+script = ExtResource("1_dkvvw")

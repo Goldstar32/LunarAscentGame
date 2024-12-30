@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2ic7s41wptmr"]
+
+[ext_resource type="Script" path="res://Moon.cs" id="1_2sp6q"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vptn7"]
+margin = 0.1
+radius = 1.7374e+06
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3gga0"]
+albedo_color = Color(0.234137, 0.242945, 0.247349, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_h4nwy"]
+material = SubResource("StandardMaterial3D_3gga0")
+radius = 1.7374e+06
+height = 3.4748e+06
+
+[node name="Moon" type="StaticBody3D"]
+script = ExtResource("1_2sp6q")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_vptn7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_h4nwy")

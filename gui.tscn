@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgcarv666xwqm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ol78j"]
+
+[node name="GUI" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+split_offset = 250
+
+[node name="BackgroundPanel" type="PanelContainer" parent="HBoxContainer/HSplitContainer"]
+layout_mode = 2
+
+[node name="StatsContainer" type="VBoxContainer" parent="HBoxContainer/HSplitContainer/BackgroundPanel"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="DistanceLabel" type="Label" parent="HBoxContainer/HSplitContainer/BackgroundPanel/StatsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Distance to moon:
+00,00 km"
+clip_text = true
+
+[node name="VelocityLabel" type="Label" parent="HBoxContainer/HSplitContainer/BackgroundPanel/StatsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Velocity: 
+00,00 m/s"
+clip_text = true
+
+[node name="AccelerationLabel" type="Label" parent="HBoxContainer/HSplitContainer/BackgroundPanel/StatsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Acceleration:
+00,00 m/s²"
+clip_text = true
+
+[node name="FuelLabel" type="Label" parent="HBoxContainer/HSplitContainer/BackgroundPanel/StatsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Remaining fuel: 
+00,00 kg"
+clip_text = true
+
+[node name="FillContainer" type="PanelContainer" parent="HBoxContainer/HSplitContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ol78j")

@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://kkslwpe05cew"]
+
+[ext_resource type="Script" path="res://Thruster.cs" id="1_rl3na"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_6t1uc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ad3s"]
+albedo_color = Color(1, 0.341176, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_eakmb"]
+material = SubResource("StandardMaterial3D_7ad3s")
+
+[node name="Thruster" type="Node3D"]
+script = ExtResource("1_rl3na")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("CylinderShape3D_6t1uc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("CylinderMesh_eakmb")

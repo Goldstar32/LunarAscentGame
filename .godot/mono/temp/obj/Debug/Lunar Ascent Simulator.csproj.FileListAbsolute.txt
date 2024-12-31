@@ -1,0 +1,17 @@
+D:\Godot\Projects\LunarAscentGame\.godot\mono\temp\bin\Debug\Lunar Ascent Simulator.deps.json
+D:\Godot\Projects\LunarAscentGame\.godot\mono\temp\bin\Debug\Lunar Ascent Simulator.runtimeconfig.json
+D:\Godot\Projects\LunarAscentGame\.godot\mono\temp\bin\Debug\Lunar Ascent Simulator.dll
+D:\Godot\Projects\LunarAscentGame\.godot\mono\temp\bin\Debug\Lunar Ascent Simulator.pdb
+D:\Godot\Projects\LunarAscentGame\.godot\mono\temp\bin\Debug\GodotSharp.dll
+D:\Godot\Projects\LunarAscentGame\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+D:\Godot\Projects\LunarAscentGame\.godot\mono\temp\obj\Debug\Lunar Ascent Simulator.csproj.AssemblyReference.cache
+D:\Godot\Projects\LunarAscentGame\.godot\mono\temp\obj\Debug\Lunar Ascent Simulator.GeneratedMSBuildEditorConfig.editorconfig
+D:\Godot\Projects\LunarAscentGame\.godot\mono\temp\obj\Debug\Lunar Ascent Simulator.AssemblyInfoInputs.cache
+D:\Godot\Projects\LunarAscentGame\.godot\mono\temp\obj\Debug\Lunar Ascent Simulator.AssemblyInfo.cs
+D:\Godot\Projects\LunarAscentGame\.godot\mono\temp\obj\Debug\Lunar Ascent Simulator.csproj.CoreCompileInputs.cache
+D:\Godot\Projects\LunarAscentGame\.godot\mono\temp\obj\Debug\Lunar Ascent Simulator.csproj.CopyComplete
+D:\Godot\Projects\LunarAscentGame\.godot\mono\temp\obj\Debug\Lunar Ascent Simulator.dll
+D:\Godot\Projects\LunarAscentGame\.godot\mono\temp\obj\Debug\refint\Lunar Ascent Simulator.dll
+D:\Godot\Projects\LunarAscentGame\.godot\mono\temp\obj\Debug\Lunar Ascent Simulator.pdb
+D:\Godot\Projects\LunarAscentGame\.godot\mono\temp\obj\Debug\Lunar Ascent Simulator.genruntimeconfig.cache
+D:\Godot\Projects\LunarAscentGame\.godot\mono\temp\obj\Debug\ref\Lunar Ascent Simulator.dll

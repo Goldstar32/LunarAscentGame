@@ -30,7 +30,6 @@ public partial class PhysicsProcess : Node
 
     private double simulationTime = 0; // Total time passed in seconds
     private double timeAccumulatorLabels = 0.0; // Timer for updating labels
-    private double timeAccumulatorLogs = 0.0; // Timer for logging values
 
     // Instantiate objects ^^^
     //
@@ -42,28 +41,6 @@ public partial class PhysicsProcess : Node
         LoadRocket();
         LoadMoon();
         GetGUILabels();
-        csvWriter.Start(
-            "test_data/logs",
-            new[]
-            {
-                $"Initial values:",
-                $"Dry mass: {rocket1.MDry} kg",
-                $"Fuel mass: {rocket1.MFuel} kg",
-                $"Total mass: {rocket1.MTot} kg",
-                $"Velocity: {rocket1.Velocity} m/s",
-                $"Acceleration: {rocket1.Acceleration} m/s^2",
-                $"Main thruster mass flow: {rocket1.Thrusters[0].Mdot} kg/s",
-                $"Main thruster exhaust velocity: {rocket1.Thrusters[0].ExhaustVelocity} m/s",
-            },
-            new[]
-            {
-                "Time [s]",
-                "Distance to moon [m]",
-                "Velocity [m/s]",
-                "Acceleration [m/s^2]",
-                "Remaining Fuel [kg]",
-            }
-        );
     }
 
     // Runs regularly to update physics
@@ -74,20 +51,12 @@ public partial class PhysicsProcess : Node
         // Add delta to timers
         simulationTime += delta;
         timeAccumulatorLabels += delta;
-        timeAccumulatorLogs += delta;
 
         // Runs every 1 second
         if (timeAccumulatorLabels >= 1.0)
         {
             UpdateGUI(rocket1); // Call GUI update function
             timeAccumulatorLabels = 0.0; // Reset timer
-        }
-
-        // Runs every 0.2 seconds
-        if (timeAccumulatorLogs >= 0.2)
-        {
-            LogValues(rocket1); // Log values
-            timeAccumulatorLogs = 0.0; // Reset timer
         }
 
         // Update physics
@@ -136,9 +105,9 @@ public partial class PhysicsProcess : Node
         rocket1.Position = new Vector3(0, 1, 0);
 
         // Set some initial values on rocket for testing
-        rocket1.MDry = 2260; // [kg]
-        rocket1.MFuel = 2387; // [kg]
-        rocket1.Velocity = new Vector3(0, 1000, 0); // Initial velocity
+        rocket1.MDry = 1000; // [kg]
+        rocket1.MFuel = 500; // [kg]
+        rocket1.Velocity = new Vector3(0, 0, 0); // Initial velocity
         rocket1.AngularVelocity = new Vector3(0, 0, 0); // Initial angular velocity
         rocket1.Radius = 5; // [m]
 

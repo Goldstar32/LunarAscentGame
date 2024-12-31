@@ -3,7 +3,7 @@ using Godot;
 
 public partial class CSVWriter : Node
 {
-    private string runNumberFilePath = "user://test_data/run_number.txt";
+    private string runNumberFilePath = "user://lunar_ascent_game/run_number.txt";
     private string filePath;
 
     // Get the current run number, add one, and save it
@@ -28,19 +28,19 @@ public partial class CSVWriter : Node
                 GD.PrintErr($"Failed to read run number file: {ex.Message}");
             }
         }
-		else // Create new test_data folder if needed
-		{
-			DirAccess dir = DirAccess.Open(runNumberFilePath);
+        else // Create new test_data folder if needed
+        {
+            DirAccess dir = DirAccess.Open(runNumberFilePath);
             if (dir == null)
             {
                 dir = DirAccess.Open("user://");
                 if (dir != null)
                 {
-                    dir.MakeDirRecursive("test_data");
+                    dir.MakeDirRecursive("lunar_ascent_game");
                     GD.Print($"Directory created: {runNumberFilePath}");
                 }
             }
-		}
+        }
 
         // Save the new run number to the file
         try

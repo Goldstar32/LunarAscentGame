@@ -76,7 +76,10 @@ public partial class Rocket : StaticBody3D
 
         foreach (Thruster thruster in Thrusters)
         {
-            totalThrust += thruster.GetThrustForce(delta);
+            if (Input.IsActionPressed(thruster.Id))
+            {
+                totalThrust += thruster.GetThrustForce(delta);
+            }
         }
 
         return totalThrust;

@@ -15,3 +15,20 @@ D:\Godot\Projects\LunarAscentGame\.godot\mono\temp\obj\Debug\refint\Lunar Ascent
 D:\Godot\Projects\LunarAscentGame\.godot\mono\temp\obj\Debug\Lunar Ascent Simulator.pdb
 D:\Godot\Projects\LunarAscentGame\.godot\mono\temp\obj\Debug\Lunar Ascent Simulator.genruntimeconfig.cache
 D:\Godot\Projects\LunarAscentGame\.godot\mono\temp\obj\Debug\ref\Lunar Ascent Simulator.dll
+C:\Users\josua.karnsund\Documents\LunarAscentGame\.godot\mono\temp\bin\Debug\Lunar Ascent Simulator.deps.json
+C:\Users\josua.karnsund\Documents\LunarAscentGame\.godot\mono\temp\bin\Debug\Lunar Ascent Simulator.runtimeconfig.json
+C:\Users\josua.karnsund\Documents\LunarAscentGame\.godot\mono\temp\bin\Debug\Lunar Ascent Simulator.dll
+C:\Users\josua.karnsund\Documents\LunarAscentGame\.godot\mono\temp\bin\Debug\Lunar Ascent Simulator.pdb
+C:\Users\josua.karnsund\Documents\LunarAscentGame\.godot\mono\temp\bin\Debug\GodotSharp.dll
+C:\Users\josua.karnsund\Documents\LunarAscentGame\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+C:\Users\josua.karnsund\Documents\LunarAscentGame\.godot\mono\temp\obj\Debug\Lunar Ascent Simulator.csproj.AssemblyReference.cache
+C:\Users\josua.karnsund\Documents\LunarAscentGame\.godot\mono\temp\obj\Debug\Lunar Ascent Simulator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\josua.karnsund\Documents\LunarAscentGame\.godot\mono\temp\obj\Debug\Lunar Ascent Simulator.AssemblyInfoInputs.cache
+C:\Users\josua.karnsund\Documents\LunarAscentGame\.godot\mono\temp\obj\Debug\Lunar Ascent Simulator.AssemblyInfo.cs
+C:\Users\josua.karnsund\Documents\LunarAscentGame\.godot\mono\temp\obj\Debug\Lunar Ascent Simulator.csproj.CoreCompileInputs.cache
+C:\Users\josua.karnsund\Documents\LunarAscentGame\.godot\mono\temp\obj\Debug\Lunar Ascent Simulator.csproj.CopyComplete
+C:\Users\josua.karnsund\Documents\LunarAscentGame\.godot\mono\temp\obj\Debug\Lunar Ascent Simulator.dll
+C:\Users\josua.karnsund\Documents\LunarAscentGame\.godot\mono\temp\obj\Debug\refint\Lunar Ascent Simulator.dll
+C:\Users\josua.karnsund\Documents\LunarAscentGame\.godot\mono\temp\obj\Debug\Lunar Ascent Simulator.pdb
+C:\Users\josua.karnsund\Documents\LunarAscentGame\.godot\mono\temp\obj\Debug\Lunar Ascent Simulator.genruntimeconfig.cache
+C:\Users\josua.karnsund\Documents\LunarAscentGame\.godot\mono\temp\obj\Debug\ref\Lunar Ascent Simulator.dll

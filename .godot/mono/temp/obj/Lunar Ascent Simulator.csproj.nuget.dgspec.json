@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Godot\\Projects\\LunarAscentGame\\Lunar Ascent Simulator.csproj": {}
+    "C:\\Users\\josua.karnsund\\Documents\\LunarAscentGame\\Lunar Ascent Simulator.csproj": {}
   },
   "projects": {
-    "D:\\Godot\\Projects\\LunarAscentGame\\Lunar Ascent Simulator.csproj": {
+    "C:\\Users\\josua.karnsund\\Documents\\LunarAscentGame\\Lunar Ascent Simulator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Godot\\Projects\\LunarAscentGame\\Lunar Ascent Simulator.csproj",
+        "projectUniqueName": "C:\\Users\\josua.karnsund\\Documents\\LunarAscentGame\\Lunar Ascent Simulator.csproj",
         "projectName": "Lunar Ascent Simulator",
-        "projectPath": "D:\\Godot\\Projects\\LunarAscentGame\\Lunar Ascent Simulator.csproj",
-        "packagesPath": "C:\\Users\\Josua\\.nuget\\packages\\",
-        "outputPath": "D:\\Godot\\Projects\\LunarAscentGame\\.godot\\mono\\temp\\obj\\",
+        "projectPath": "C:\\Users\\josua.karnsund\\Documents\\LunarAscentGame\\Lunar Ascent Simulator.csproj",
+        "packagesPath": "C:\\Users\\josua.karnsund\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\josua.karnsund\\Documents\\LunarAscentGame\\.godot\\mono\\temp\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Josua\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\josua.karnsund\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -62,26 +68,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.11, 6.0.11]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.11, 6.0.11]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.11, 6.0.11]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

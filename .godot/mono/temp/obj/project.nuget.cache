@@ -1,15 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "IVYhGaGSNcambHCxvCpttLQVufwD57Xsl0xh4XGt/uCHyn4Wpnx+KmdNMYsa03YkzyjGl/xc3a8wtuAMuC3CnA==",
+  "dgSpecHash": "Pzc2H5T/4CwoOC3Mk/53cPnA+hArLdC3y3jQOR+A/rFz/ikrAMnNIlyLInYiP0qWn2X9pObczO5vOcNo48uFCA==",
   "success": true,
-  "projectFilePath": "D:\\Godot\\Projects\\LunarAscentGame\\Lunar Ascent Simulator.csproj",
+  "projectFilePath": "C:\\Users\\josua.karnsund\\Documents\\LunarAscentGame\\Lunar Ascent Simulator.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Josua\\.nuget\\packages\\godot.sourcegenerators\\4.3.0\\godot.sourcegenerators.4.3.0.nupkg.sha512",
-    "C:\\Users\\Josua\\.nuget\\packages\\godotsharp\\4.3.0\\godotsharp.4.3.0.nupkg.sha512",
-    "C:\\Users\\Josua\\.nuget\\packages\\godotsharpeditor\\4.3.0\\godotsharpeditor.4.3.0.nupkg.sha512",
-    "C:\\Users\\Josua\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.11\\microsoft.netcore.app.ref.6.0.11.nupkg.sha512",
-    "C:\\Users\\Josua\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.11\\microsoft.windowsdesktop.app.ref.6.0.11.nupkg.sha512",
-    "C:\\Users\\Josua\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.11\\microsoft.aspnetcore.app.ref.6.0.11.nupkg.sha512"
+    "C:\\Users\\josua.karnsund\\.nuget\\packages\\godot.sourcegenerators\\4.3.0\\godot.sourcegenerators.4.3.0.nupkg.sha512",
+    "C:\\Users\\josua.karnsund\\.nuget\\packages\\godotsharp\\4.3.0\\godotsharp.4.3.0.nupkg.sha512",
+    "C:\\Users\\josua.karnsund\\.nuget\\packages\\godotsharpeditor\\4.3.0\\godotsharpeditor.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }

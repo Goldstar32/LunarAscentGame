@@ -120,7 +120,7 @@ public partial class PhysicsProcess : Node
             new Vector3(0, -1, 0),
             rocket1.Transform.Basis,
             5,
-            3040000
+            1000
         );
         // Add forward steer thruster
         rocket1.AddNewThruster(

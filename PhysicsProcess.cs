@@ -120,7 +120,39 @@ public partial class PhysicsProcess : Node
             new Vector3(0, -1, 0),
             rocket1.Transform.Basis,
             5,
-            3040
+            3040000
+        );
+        // Add forward steer thruster
+        rocket1.AddNewThruster(
+            "forwardThruster",
+            new Vector3(0, 0.7f, 0.2f),
+            rocket1.Transform.Basis.Rotated(new Vector3(1, 0, 0), (float)(-Math.PI / 2)),
+            5,
+            1000
+        );
+        // Add backward steer thruster
+        rocket1.AddNewThruster(
+            "backwardThruster",
+            new Vector3(0, 0.7f, -0.2f),
+            rocket1.Transform.Basis.Rotated(new Vector3(1, 0, 0), (float)(Math.PI / 2)),
+            5,
+            1000
+        );
+        // Add left steer thruster
+        rocket1.AddNewThruster(
+            "leftThruster",
+            new Vector3(-0.2f, 0.7f, 0),
+            rocket1.Transform.Basis.Rotated(new Vector3(0, 0, 1), (float)(-Math.PI / 2)),
+            5,
+            1000
+        );
+        // Add right steer thruster
+        rocket1.AddNewThruster(
+            "rightThruster",
+            new Vector3(0.2f, 0.7f, 0),
+            rocket1.Transform.Basis.Rotated(new Vector3(0, 0, 1), (float)(Math.PI / 2)),
+            5,
+            1000
         );
     }
 

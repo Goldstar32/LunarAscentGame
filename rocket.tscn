@@ -28,7 +28,7 @@ disabled = true
 mesh = SubResource("CylinderMesh_c1l47")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 10, 10)
+transform = Transform3D(1, 0, 0, 0, 0.866026, 0.5, 0, -0.5, 0.866026, 0, 6, 10)
 environment = SubResource("Environment_p2b8l")
 fov = 90.0
 

@@ -174,7 +174,7 @@ public partial class PhysicsProcess : Node
     {
         // Access the GUI labels
         var statsContainer = GetNode<VBoxContainer>(
-            "Rocket/Camera3D/GUI/HBoxContainer/HSplitContainer/BackgroundPanel/StatsContainer"
+            "Rocket/RocketCamera/GUI/HBoxContainer/HSplitContainer/BackgroundPanel/StatsContainer"
         );
 
         distanceLabel = statsContainer.GetNode<Label>("DistanceLabel");

@@ -34,5 +34,6 @@ environment = SubResource("Environment_p2b8l")
 fov = 90.0
 script = ExtResource("2_k3naj")
 RocketPath = NodePath("..")
+Offset = Vector3(0, 5, 8)
 
 [node name="GUI" parent="RocketCamera" instance=ExtResource("2_4o1pa")]

@@ -211,7 +211,7 @@ public partial class PhysicsProcess : Node
         return totForce;
     }
 
-    // Calculate and return gravitational force
+    // Calculate and return gravitational force from moon
     private Vector3 GetGravForce(Rocket rocket)
     {
         // Calculate distance between moon and rocket

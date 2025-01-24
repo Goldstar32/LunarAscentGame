@@ -1,8 +1,9 @@
 res://main.tscn
 res://rocket.tscn
-res://Rocket.cs
-res://Thruster.cs
-res://Moon.cs
-res://CSVWriter.cs
-res://PhysicsProcess.cs
+res://moon.tscn
 res://RocketCamera.cs
+res://Thruster.cs
+res://PhysicsProcess.cs
+res://Moon.cs
+res://Rocket.cs
+res://CSVWriter.cs

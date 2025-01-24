@@ -74,16 +74,16 @@ public partial class RocketCamera : Camera3D
         {
             _pitch = Mathf.Clamp(
                 _pitch - RotationSpeed * delta,
-                Mathf.DegToRad(-45f),
-                Mathf.DegToRad(45f)
+                Mathf.DegToRad(-90f),
+                Mathf.DegToRad(90f)
             );
         }
         if (Input.IsActionPressed("uiDown"))
         {
             _pitch = Mathf.Clamp(
                 _pitch + RotationSpeed * delta,
-                Mathf.DegToRad(-45f),
-                Mathf.DegToRad(45f)
+                Mathf.DegToRad(-90f),
+                Mathf.DegToRad(90f)
             );
         }
     }

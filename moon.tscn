@@ -1,24 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2ic7s41wptmr"]
+[gd_scene load_steps=8 format=3 uid="uid://b2ic7s41wptmr"]
 
 [ext_resource type="Script" path="res://Moon.cs" id="1_2sp6q"]
+[ext_resource type="Texture2D" uid="uid://40xsfdco2ymw" path="res://textures/moon_textures/rock_surface_diff_4k.png" id="2_rgk0s"]
+[ext_resource type="Texture2D" uid="uid://1acpanwbnknw" path="res://textures/moon_textures/rock_surface_nor_gl_4k.png" id="3_5nto5"]
+[ext_resource type="Texture2D" uid="uid://bj51c1h2m8yje" path="res://textures/moon_textures/rock_surface_rough_4k.png" id="3_b5oa7"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_vptn7"]
 margin = 0.1
-radius = 1.7374e+06
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3gga0"]
-albedo_color = Color(0.234137, 0.242945, 0.247349, 1)
+albedo_texture = ExtResource("2_rgk0s")
+roughness_texture = ExtResource("3_b5oa7")
+normal_enabled = true
+normal_texture = ExtResource("3_5nto5")
 
 [sub_resource type="SphereMesh" id="SphereMesh_h4nwy"]
 material = SubResource("StandardMaterial3D_3gga0")
-radius = 1.7374e+06
-height = 3.4748e+06
+radial_segments = 256
+rings = 128
 
 [node name="Moon" type="StaticBody3D"]
 script = ExtResource("1_2sp6q")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="MoonCollisionShape" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_vptn7")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MoonMesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_h4nwy")

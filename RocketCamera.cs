@@ -5,7 +5,7 @@ public partial class RocketCamera : Camera3D
 {
     // Export makes properties accessible in godot editor
     [Export]
-    public NodePath RocketPath = "."; // Drag your rocket node into this in the editor
+    public NodePath RocketPath = "."; // Drag rocket node into this in the editor
 
     [Export]
     public float FollowSpeed = 5f; // Speed of following the rocket
@@ -41,19 +41,19 @@ public partial class RocketCamera : Camera3D
         // Smoothly follow the rocket
         Vector3 targetPosition = _rocket.GlobalTransform.Origin;
 
-        // Calculate rotated offset
-        Vector3 rotatedOffset = Offset.Rotated(Vector3.Up, _yaw).Rotated(Vector3.Right, _pitch);
+        // Transform the offset based on the rocket's global orientation
+        Vector3 globalOffset = _rocket.GlobalTransform.Basis * Offset;
 
         // Apply the camera position
-        Vector3 desiredPosition = targetPosition + rotatedOffset;
+        Vector3 desiredPosition = targetPosition + globalOffset;
         Vector3 smoothedPosition = GlobalTransform.Origin.Lerp(
             desiredPosition,
             (float)(FollowSpeed * delta)
         );
         GlobalTransform = new Transform3D(GlobalTransform.Basis, smoothedPosition);
 
-        // Make the camera look at the rocket
-        LookAt(targetPosition, Vector3.Up);
+        // Align the camera's rotation with the rocket's rotation
+        LookAt(targetPosition, _rocket.GlobalTransform.Basis.Y);
 
         // Handle rotation controls
         HandleRotation((float)delta);

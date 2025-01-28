@@ -16,8 +16,6 @@ normal_texture = ExtResource("3_5nto5")
 
 [sub_resource type="SphereMesh" id="SphereMesh_h4nwy"]
 material = SubResource("StandardMaterial3D_3gga0")
-radial_segments = 256
-rings = 128
 
 [node name="Moon" type="StaticBody3D"]
 script = ExtResource("1_2sp6q")
@@ -26,4 +24,5 @@ script = ExtResource("1_2sp6q")
 shape = SubResource("SphereShape3D_vptn7")
 
 [node name="MoonMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
 mesh = SubResource("SphereMesh_h4nwy")

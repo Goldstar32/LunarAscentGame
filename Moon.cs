@@ -4,9 +4,8 @@ using Godot;
 public partial class Moon : StaticBody3D
 {
     // Constants vvv
-
     const float moonRadius = 1000f; // Constant for moons radius 1737.4e3f
-    const double moonMass = 1e15f; // Constant for moons mass 7.342e22
+    const double moonMass = 1e16f; // Constant for moons mass 7.342e22
 
     // Constants ^^^
     //
@@ -43,7 +42,7 @@ public partial class Moon : StaticBody3D
             sphereMesh.Radius = moonRadius;
             sphereMesh.Height = moonRadius * 2;
         }
-        this.GlobalPosition = new Vector3(0, -moonRadius, 0); // Center of moon (origo is approx at surface of moon)
+        GlobalPosition = new Vector3(0, -moonRadius, 0); // Center of moon (origo is approx at surface of moon)
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.

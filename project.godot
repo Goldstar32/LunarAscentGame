@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="LunarAscentGame"
-run/main_scene="res://main.tscn"
+run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-CSVWriter="*res://csv_writer.tscn"
+CSVWriter="*res://scenes/csv_writer.tscn"
 
 [dotnet]
 

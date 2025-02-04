@@ -6,7 +6,8 @@ public partial class Rocket : StaticBody3D
 {
     // Constants vvv
 
-    private PackedScene thrusterScene = (PackedScene)ResourceLoader.Load("res://thruster.tscn"); // Scene path to thruster
+    private PackedScene thrusterScene = (PackedScene)
+        ResourceLoader.Load("res://scenes/thruster.tscn"); // Scene path to thruster
 
     // Constants ^^^
     //

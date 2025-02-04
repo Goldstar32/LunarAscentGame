@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://d2sdsrvks8cq6"]
 
-[ext_resource type="Script" path="res://Rocket.cs" id="1_npn0y"]
-[ext_resource type="PackedScene" uid="uid://bgcarv666xwqm" path="res://gui.tscn" id="2_4o1pa"]
-[ext_resource type="Script" path="res://RocketCamera.cs" id="2_k3naj"]
+[ext_resource type="Script" path="res://scripts/Rocket.cs" id="1_trosa"]
+[ext_resource type="Script" path="res://scripts/RocketCamera.cs" id="2_q0j8v"]
+[ext_resource type="PackedScene" uid="uid://bgcarv666xwqm" path="res://scenes/gui.tscn" id="3_hvcnr"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_pgl4m"]
 
@@ -18,7 +18,7 @@ background_mode = 2
 sky = SubResource("Sky_qbqv0")
 
 [node name="Rocket" type="StaticBody3D"]
-script = ExtResource("1_npn0y")
+script = ExtResource("1_trosa")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 rotation_edit_mode = 2
@@ -32,9 +32,9 @@ mesh = SubResource("CylinderMesh_c1l47")
 top_level = true
 environment = SubResource("Environment_p2b8l")
 fov = 90.0
-script = ExtResource("2_k3naj")
+script = ExtResource("2_q0j8v")
 RocketPath = NodePath("..")
 FollowSpeed = 10.0
 Offset = Vector3(0, 5, 8)
 
-[node name="GUI" parent="RocketCamera" instance=ExtResource("2_4o1pa")]
+[node name="GUI" parent="RocketCamera" instance=ExtResource("3_hvcnr")]

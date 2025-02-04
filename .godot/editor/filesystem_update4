@@ -7,3 +7,12 @@ res://PhysicsProcess.cs
 res://Moon.cs
 res://Rocket.cs
 res://CSVWriter.cs
+res://scenes/main.tscn
+res://scenes/rocket.tscn
+res://scenes/moon.tscn
+res://scripts/RocketCamera.cs
+res://scripts/Moon.cs
+res://scripts/Rocket.cs
+res://scripts/CSVWriter.cs
+res://scripts/PhysicsProcess.cs
+res://scripts/Thruster.cs

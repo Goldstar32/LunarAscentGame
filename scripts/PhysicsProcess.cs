@@ -96,7 +96,7 @@ public partial class PhysicsProcess : Node
     private void LoadRocket()
     {
         // Load rocket scene
-        rocketScene = (PackedScene)ResourceLoader.Load("res://rocket.tscn");
+        rocketScene = (PackedScene)ResourceLoader.Load("res://scenes/rocket.tscn");
 
         // Instanciate rocket from scene
         rocket1 = (Rocket)rocketScene.Instantiate();
@@ -160,7 +160,7 @@ public partial class PhysicsProcess : Node
     private void LoadMoon()
     {
         // Load moon scene
-        moonScene = (PackedScene)ResourceLoader.Load("res://moon.tscn");
+        moonScene = (PackedScene)ResourceLoader.Load("res://scenes/moon.tscn");
 
         // Instanciate moon from scene
         moon = (Moon)moonScene.Instantiate();

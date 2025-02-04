@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://kkslwpe05cew"]
 
-[ext_resource type="Script" path="res://Thruster.cs" id="1_rl3na"]
+[ext_resource type="Script" path="res://scripts/Thruster.cs" id="1_rl3na"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_6t1uc"]
 

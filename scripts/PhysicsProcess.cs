@@ -10,15 +10,17 @@ public partial class PhysicsProcess : Node
 
     // Constants ^^^
     //
-    // Instantiate objects vvv
+    // Initialize & instantiate objects vvv
 
     private PackedScene rocketScene; // Rocket scene path
 
-    private Rocket rocket1; // Instantiate rocket object
+    private Rocket rocket1;
 
     private PackedScene moonScene; // Moon scene path
 
-    private Moon startMoon; // Instantiate startMoon object
+    private Moon startMoon;
+
+    private Moon endMoon;
 
     private CSVWriter csvWriter = new(); // Create new csv instance for logging results
 
@@ -39,7 +41,9 @@ public partial class PhysicsProcess : Node
     public override void _Ready()
     {
         LoadRocket();
-        LoadStartMoon();
+        startMoon = LoadMoon();
+        endMoon = LoadMoon();
+        endMoon.GlobalPosition = new Vector3(0, 2000, 0);
         GetGUILabels();
     }
 
@@ -156,17 +160,19 @@ public partial class PhysicsProcess : Node
         );
     }
 
-    // Method for loading startMoon
-    private void LoadStartMoon()
+    // Method for loading moon
+    private Moon LoadMoon()
     {
         // Load startMoon scene
         moonScene = (PackedScene)ResourceLoader.Load("res://scenes/moon.tscn");
 
-        // Instanciate startMoon from scene
-        startMoon = (Moon)moonScene.Instantiate();
+        // Instanciate moon from scene
+        Moon newMoon = (Moon)moonScene.Instantiate();
 
-        // Add startMoon to scene
-        AddChild(startMoon);
+        // Add moon to scene
+        AddChild(newMoon);
+
+        return newMoon;
     }
 
     // Gets the labels for the GUI

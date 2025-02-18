@@ -18,7 +18,7 @@ public partial class PhysicsProcess : Node
 
     private PackedScene moonScene; // Moon scene path
 
-    private Moon moon; // Instantiate moon object
+    private Moon startMoon; // Instantiate startMoon object
 
     private CSVWriter csvWriter = new(); // Create new csv instance for logging results
 
@@ -39,7 +39,7 @@ public partial class PhysicsProcess : Node
     public override void _Ready()
     {
         LoadRocket();
-        LoadMoon();
+        LoadStartMoon();
         GetGUILabels();
     }
 
@@ -74,10 +74,10 @@ public partial class PhysicsProcess : Node
         // Round values with two decimals of precision
         string time = simulationTime.ToString("F2"); // Total time passed since launch in seconds
         string distanceToMoon = Round(
-                moon.GlobalPosition.DistanceTo(rocket.GlobalPosition) - moon.Radius,
+                startMoon.GlobalPosition.DistanceTo(rocket.GlobalPosition) - startMoon.Radius,
                 2
             )
-            .ToString(); // Distance from rocket to moon's surface [m]
+            .ToString(); // Distance from rocket to startMoon's surface [m]
         string velocity = rocket.Velocity.Length().ToString("F2"); // Length of velocity vector [m/s]
         string acceleration = rocket.Acceleration.Length().ToString("F2"); // Length of acceleration vector [m/s^2]
         string remainingFuel = rocket.MFuel.ToString("F2"); // Current fuel mass [kg]
@@ -156,17 +156,17 @@ public partial class PhysicsProcess : Node
         );
     }
 
-    // Method for loading moon
-    private void LoadMoon()
+    // Method for loading startMoon
+    private void LoadStartMoon()
     {
-        // Load moon scene
+        // Load startMoon scene
         moonScene = (PackedScene)ResourceLoader.Load("res://scenes/moon.tscn");
 
-        // Instanciate moon from scene
-        moon = (Moon)moonScene.Instantiate();
+        // Instanciate startMoon from scene
+        startMoon = (Moon)moonScene.Instantiate();
 
-        // Add moon to scene
-        AddChild(moon);
+        // Add startMoon to scene
+        AddChild(startMoon);
     }
 
     // Gets the labels for the GUI
@@ -188,15 +188,15 @@ public partial class PhysicsProcess : Node
     {
         // Round values with two decimals of precision
         double distanceToMoon = Round(
-            (moon.GlobalPosition.DistanceTo(rocket.GlobalPosition) - moon.Radius) / 1000,
+            (startMoon.GlobalPosition.DistanceTo(rocket.GlobalPosition) - startMoon.Radius) / 1000,
             2
-        ); // Distance from rocket to moon's surface in km [km]
+        ); // Distance from rocket to startMoon's surface in km [km]
         double velocity = rocket.Velocity.Length(); // Length of velocity vector [m/s]
         double acceleration = rocket.Acceleration.Length(); // Length of acceleration vector [m/s^2]
         double remainingFuel = rocket1.MFuel; // Current fuel mass [kg]
 
         // Update the GUI labels with formatted text
-        distanceLabel.Text = $"Distance to moon: \n{distanceToMoon:F2} km";
+        distanceLabel.Text = $"Distance to startMoon: \n{distanceToMoon:F2} km";
         velocityLabel.Text = $"Velocity: \n{velocity:F2} m/s";
         accelerationLabel.Text = $"Acceleration: \n{acceleration:F2} m/s²";
         fuelLabel.Text = $"Remaining fuel: \n{remainingFuel:F2} kg";
@@ -211,11 +211,11 @@ public partial class PhysicsProcess : Node
         return totForce;
     }
 
-    // Calculate and return gravitational force from moon
+    // Calculate and return gravitational force from startMoon
     private Vector3 GetGravForce(Rocket rocket)
     {
-        // Calculate distance between moon and rocket
-        Vector3 distanceVector = moon.GlobalPosition - rocket.GlobalPosition;
+        // Calculate distance between startMoon and rocket
+        Vector3 distanceVector = startMoon.GlobalPosition - rocket.GlobalPosition;
         double distance = distanceVector.Length();
 
         // Avoid division with 0 in case rocket is at the moons center
@@ -223,13 +223,13 @@ public partial class PhysicsProcess : Node
             return Vector3.Zero;
 
         // Calculate the magnitude
-        double magnitude = G * (moon.MoonMass * rocket.MTot) / (distance * distance);
+        double magnitude = G * (startMoon.MoonMass * rocket.MTot) / (distance * distance);
 
-        // Return gravitational force as vector proportional to distance and direction of rocket relative to moon
+        // Return gravitational force as vector proportional to distance and direction of rocket relative to startMoon
         return distanceVector.Normalized() * (float)magnitude;
     }
 
-    // Updates acceleration based on forces (Gravitation from moon (add thrust from rocket here later))
+    // Updates acceleration based on forces (Gravitation from startMoon (add thrust from rocket here later))
     private void UpdateAcceleration(Rocket rocket, double delta)
     {
         Vector3 newRes = GetTotForce(rocket, delta); // New resulting force

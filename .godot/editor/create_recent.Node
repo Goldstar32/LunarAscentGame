@@ -1,1 +1,7 @@
+VBoxContainer
+Label
+SpinBox
+LineEdit
+HSlider
+Button
 WorldEnvironment

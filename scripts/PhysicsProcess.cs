@@ -12,11 +12,11 @@ public partial class PhysicsProcess : Node
     //
     // Initialize & instantiate objects vvv
 
-    private PackedScene rocketScene; // Rocket scene path
+    private PackedScene rocketScene; // Rocket scene
 
     private Rocket rocket1;
 
-    private PackedScene moonScene; // Moon scene path
+    private PackedScene moonScene; // Moon scene
 
     private Moon startMoon;
 

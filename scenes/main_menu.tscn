@@ -1,0 +1,87 @@
+[gd_scene load_steps=2 format=3 uid="uid://bn1fu2x1ob3qi"]
+
+[ext_resource type="Script" path="res://scripts/MainMenu.cs" id="1_ljjj2"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ljjj2")
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 473.0
+offset_top = 260.0
+offset_right = 684.0
+offset_bottom = 344.0
+text = "PLAY"
+
+[node name="SimSettingsContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 150.0
+offset_right = 293.0
+offset_bottom = 456.0
+
+[node name="FuelMassContainer" type="VBoxContainer" parent="SimSettingsContainer"]
+layout_mode = 2
+
+[node name="FuelMassLabel" type="Label" parent="SimSettingsContainer/FuelMassContainer"]
+layout_mode = 2
+text = "Fuel mass"
+
+[node name="FuelMassInput" type="SpinBox" parent="SimSettingsContainer/FuelMassContainer"]
+layout_mode = 2
+suffix = "kg"
+
+[node name="DryMassContainer" type="VBoxContainer" parent="SimSettingsContainer"]
+layout_mode = 2
+
+[node name="DryMassLabel" type="Label" parent="SimSettingsContainer/DryMassContainer"]
+layout_mode = 2
+text = "Dry mass"
+
+[node name="DryMassInput" type="SpinBox" parent="SimSettingsContainer/DryMassContainer"]
+layout_mode = 2
+suffix = "kg"
+
+[node name="InitVelContainer" type="VBoxContainer" parent="SimSettingsContainer"]
+layout_mode = 2
+
+[node name="InitVelLabel" type="Label" parent="SimSettingsContainer/InitVelContainer"]
+layout_mode = 2
+text = "Initial velocity"
+
+[node name="InitVelInput" type="SpinBox" parent="SimSettingsContainer/InitVelContainer"]
+layout_mode = 2
+suffix = "m/s"
+
+[node name="GravConstContainer" type="VBoxContainer" parent="SimSettingsContainer"]
+layout_mode = 2
+
+[node name="GravConstLabel" type="Label" parent="SimSettingsContainer/GravConstContainer"]
+layout_mode = 2
+text = "Gravitational constant"
+
+[node name="GravConstInput" type="SpinBox" parent="SimSettingsContainer/GravConstContainer"]
+layout_mode = 2
+
+[node name="MdotContainer" type="VBoxContainer" parent="SimSettingsContainer"]
+layout_mode = 2
+
+[node name="MdotLabel" type="Label" parent="SimSettingsContainer/MdotContainer"]
+layout_mode = 2
+text = "Exhaust velocity"
+
+[node name="MdotInput" type="SpinBox" parent="SimSettingsContainer/MdotContainer"]
+layout_mode = 2
+suffix = "m/s"
+
+[node name="ResetButton" type="Button" parent="SimSettingsContainer"]
+layout_mode = 2
+text = "Reset to defaut"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

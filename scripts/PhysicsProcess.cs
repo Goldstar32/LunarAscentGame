@@ -72,23 +72,6 @@ public partial class PhysicsProcess : Node
         UpdateRotation(rocket1, delta); // Update rockets rotation
     }
 
-    // Logs rockets current values to document
-    private void LogValues(Rocket rocket)
-    {
-        // Round values with two decimals of precision
-        string time = simulationTime.ToString("F2"); // Total time passed since launch in seconds
-        string distanceToMoon = Round(
-                startMoon.GlobalPosition.DistanceTo(rocket.GlobalPosition) - startMoon.Radius,
-                2
-            )
-            .ToString(); // Distance from rocket to startMoon's surface [m]
-        string velocity = rocket.Velocity.Length().ToString("F2"); // Length of velocity vector [m/s]
-        string acceleration = rocket.Acceleration.Length().ToString("F2"); // Length of acceleration vector [m/s^2]
-        string remainingFuel = rocket.MFuel.ToString("F2"); // Current fuel mass [kg]
-
-        csvWriter.WriteRow(new[] { time, distanceToMoon, velocity, acceleration, remainingFuel });
-    }
-
     // Returns input value with x decimals of precision
     private static double Round(double value, int precision)
     {

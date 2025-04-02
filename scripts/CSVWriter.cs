@@ -1,72 +1,25 @@
 using System;
+using System.Linq;
 using Godot;
 
 public partial class CSVWriter : Node
 {
-    private string runNumberFilePath = "user://lunar_ascent_game/run_number.txt";
+    private string simVarsFilePath = "user://lunar_ascent_game/";
     private string filePath;
 
-    // Get the current run number, add one, and save it
-    private int GetAndIncrementRunNumber()
-    {
-        int runNumber = 1;
-
-        // Check if the run number file exists
-        if (FileAccess.FileExists(runNumberFilePath))
-        {
-            try
-            {
-                using var file = FileAccess.Open(runNumberFilePath, FileAccess.ModeFlags.Read); // Open file
-                string runNumberStr = file.GetAsText(); // Get text in file
-                if (int.TryParse(runNumberStr.Trim(), out int parsedRunNumber)) // Parse text
-                {
-                    runNumber = parsedRunNumber + 1;
-                }
-            }
-            catch (Exception ex)
-            {
-                GD.PrintErr($"Failed to read run number file: {ex.Message}");
-            }
-        }
-        else // Create new test_data folder if needed
-        {
-            DirAccess dir = DirAccess.Open(runNumberFilePath);
-            if (dir == null)
-            {
-                dir = DirAccess.Open("user://");
-                if (dir != null)
-                {
-                    dir.MakeDirRecursive("lunar_ascent_game");
-                    GD.Print($"Directory created: {runNumberFilePath}");
-                }
-            }
-        }
-
-        // Save the new run number to the file
-        try
-        {
-            using var file = FileAccess.Open(runNumberFilePath, FileAccess.ModeFlags.Write);
-            file.StoreString(runNumber.ToString());
-        }
-        catch (Exception ex)
-        {
-            GD.PrintErr($"Failed to write run number file: {ex.Message}");
-        }
-
-        return runNumber;
-    }
-
-    // Initialize the CSV file
-    public void Start(string filePathBase, string[] initialValues, string[] headers)
+    // Initialize the CSV file. Creates new directory and file if provided path does not already exist
+    public void Start(
+        string filePathBase,
+        string fileName,
+        string[] initialValues,
+        string[] headers
+    )
     {
         try
         {
-            // Update and get the run number
-            int runNumber = GetAndIncrementRunNumber();
-
             // Generate the full file path
             string directoryPath = $"user://{filePathBase}";
-            filePath = $"{directoryPath}/run{runNumber}.csv";
+            filePath = $"{directoryPath}/{fileName}.csv";
 
             // Ensure the directory exists
             DirAccess dir = DirAccess.Open(directoryPath);
@@ -75,17 +28,18 @@ public partial class CSVWriter : Node
                 dir = DirAccess.Open("user://");
                 if (dir != null)
                 {
+                    // Create directory
                     dir.MakeDirRecursive(filePathBase);
                     GD.Print($"Directory created: {directoryPath}");
+
+                    // Open the file for writing
+                    using var file = FileAccess.Open(filePath, FileAccess.ModeFlags.Write);
+
+                    // Write initial values and headers
+                    file.StoreString(string.Join(";", initialValues) + "\n");
+                    file.StoreString(string.Join(";", headers) + "\n");
                 }
             }
-
-            // Open the file for writing
-            using var file = FileAccess.Open(filePath, FileAccess.ModeFlags.Write);
-
-            // Write initial values and headers
-            file.StoreString(string.Join(";", initialValues) + "\n");
-            file.StoreString(string.Join(";", headers) + "\n");
         }
         catch (Exception ex)
         {
@@ -94,13 +48,65 @@ public partial class CSVWriter : Node
     }
 
     // Append a new row to file
-    public void WriteRow(string[] row)
+    public void WriteRow(FileAccess file, string[] row)
+    {
+        try
+        {
+            file.SeekEnd(); // Move to the end of the file
+            file.StoreString(string.Join(";", row) + "\n"); // Write the new row
+        }
+        catch (Exception ex)
+        {
+            GD.PrintErr($"Failed to write row: {ex.Message}");
+        }
+    }
+
+    // Gets values of first row where value in first column matches "searchRow"
+    public string[] GetRow(string searchRow)
     {
         try
         {
             using var file = FileAccess.Open(filePath, FileAccess.ModeFlags.ReadWrite); // Open file
-            file.SeekEnd(); // Move to the end of the file
-            file.StoreString(string.Join(";", row) + "\n"); // Write the new row
+
+            // Split csv values to array with rows
+            string[] rows = file.GetAsText().Split("\b");
+            foreach (string row in rows)
+            {
+                string[] csvRow = row.Split(";");
+                if (csvRow.First() == searchRow)
+                {
+                    return csvRow;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            GD.PrintErr($"Failed to write row: {ex.Message}");
+        }
+        return Array.Empty<string>();
+    }
+
+    // Sets values of each row where value in first column matches "searchRow"
+    public void SetRow(string searchRow, string[] newRow)
+    {
+        try
+        {
+            using var file = FileAccess.Open(filePath, FileAccess.ModeFlags.ReadWrite); // Open file
+
+            string[] rows = file.GetAsText().Split("\n");
+            foreach (string row in rows)
+            {
+                string[] csvRow = row.Split(";");
+
+                if (csvRow[0] == searchRow)
+                {
+                    WriteRow(file, newRow);
+                }
+                else
+                {
+                    WriteRow(file, csvRow);
+                }
+            }
         }
         catch (Exception ex)
         {
